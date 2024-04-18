@@ -10,15 +10,102 @@ jobs:
     steps:
       - name: Install musl-cross tools
         run: |
-          brew tap you54f/homebrew-musl-cross
-          brew install https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-s390x--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew tap you54f/homebrew-musl-cross-multilib
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-aarch64--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-arm--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-arm-hf--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-i386--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-i486--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-i586--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-i686--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-powerpc--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-powerpc-sf--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-powerpc64--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-powerpc64le--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-riscv64--0.9.9_2.arm64_sonoma.bottle.1.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-s390x--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-x86_64--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-aarch64--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-arm--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-arm-hf--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-i386--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-i486--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-i586--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-i686--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-powerpc--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-powerpc-sf--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-powerpc64--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-powerpc64le--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-riscv64--0.9.9_2.arm64_sonoma.bottle.1.tar.gz
+          brew install musl-cross-s390x--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          brew install musl-cross-x86_64--0.9.9_2.arm64_sonoma.bottle.tar.gz
           ls $(brew --prefix musl-cross-s390x)/*
-      - name: Install musl-cross tools
+      - name: Install libunwind-musl
         run: |
           brew tap you54f/libunwind-musl
-          brew install https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-s390x-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-aarch64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-arm-hf-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-i386-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-i486-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-i586-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-i686-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-powerpc64le-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-riscv64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-s390x-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          curl -LO https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-x86_64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-aarch64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-arm-hf-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-i386-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-i486-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-i586-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-i686-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-powerpc64le-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-riscv64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-s390x-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          brew install libunwind-x86_64-musl--1.8.1.arm64_sonoma.bottle.tar.gz
           ls $(brew --prefix libunwind-s390x-musl)/*
+      - name: Install macos-cross-toolchains gnu tools
+        run: |
+          brew install messense/macos-cross-toolchains/x86_64-unknown-linux-gnu
+          brew install messense/macos-cross-toolchains/aarch64-unknown-linux-gnu
+          brew install messense/macos-cross-toolchains/arm-unknown-linux-gnueabi
+          brew install messense/macos-cross-toolchains/arm-unknown-linux-gnueabihf
+          brew install messense/macos-cross-toolchains/i686-unknown-linux-gnu
       - name: Check cargo version
         run: |
           cargo version
-          
+      - name: Install nightly toolchain
+        run: |
+          rustup toolchain install nightly
+          rustup component add rust-src --toolchain nightly-aarch64-apple-darwin
+      - name: Install cargo xwin
+        run: |
+          curl -LO https://github.com/rust-cross/cargo-xwin/releases/download/v0.16.4/cargo-xwin-v0.16.4.universal2-apple-darwin.tar.gz
+          tar -xvf cargo-xwin-v0.16.4.universal2-apple-darwin.tar.gz
+          mv cargo-xwin /usr/local/bin/
+      - name: Install windows rust toolchains
+        run: |
+          rustup target add x86_64-pc-windows-gnu
+          rustup target add i686-pc-windows-gnu
+          rustup target add aarch64-pc-windows-msvc
+          rustup +nightly target add x86_64-pc-windows-gnu
+          rustup +nightly target add i686-pc-windows-gnu
+          rustup +nightly target add aarch64-pc-windows-msvc
+          brew install mingw-w64 # for x86_64-pc-windows-gnu and i686-pc-windows-gnu
+          # rustup toolchain install nightly-x86_64-pc-windows-gnu
+          # rustup toolchain install nightly-i686-pc-windows-gnu
+          # rustup toolchain install nightly-aarch64-pc-windows-msvc
+          # rustup component add rust-src --toolchain nightly-x86_64-pc-windows-gnu
+          # rustup component add rust-src --toolchain nightly-i686-pc-windows-gnu
+          # rustup component add rust-src --toolchain nightly-aarch64-pc-windows-msvc
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          cargo +nightly build --release -Zbuild-std=std,panic_abort -Z build-std-features=panic_immediate_abort
+          cargo +nightly xwin build --release -Zbuild-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target x86_64-pc-windows-gnu
+          cargo +nightly xwin build --release -Zbuild-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target i686-pc-windows-gnu
+          cargo +nightly xwin build --release -Zbuild-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target aarch64-pc-windows-msvc
+      - name: show build artifacts
+        run: |
+          du -sh target/*/release/hello_world
+          du -sh target/*/release/hello_world.exe
