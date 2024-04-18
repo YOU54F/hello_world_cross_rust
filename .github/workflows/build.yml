@@ -1,0 +1,24 @@
+name: build
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+      - name: Install musl-cross tools
+        run: |
+          brew tap you54f/homebrew-musl-cross
+          brew install https://github.com/YOU54F/homebrew-musl-cross-multilib/releases/download/musl-cross-0.9.9/musl-cross-s390x--0.9.9_2.arm64_sonoma.bottle.tar.gz
+          ls $(brew --prefix musl-cross-s390x)/*
+      - name: Install musl-cross tools
+        run: |
+          brew tap you54f/libunwind-musl
+          brew install https://github.com/YOU54F/homebrew-libunwind-musl/releases/download/libunwind-1.8.1/libunwind-s390x-musl--1.8.1.arm64_sonoma.bottle.tar.gz
+          ls $(brew --prefix libunwind-s390x-musl)/*
+      - name: Check cargo version
+        run: |
+          cargo version
+          
